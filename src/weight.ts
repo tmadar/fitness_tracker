@@ -1,12 +1,64 @@
-import {User} from './User';
+class User {
+    gender: string;
+    firstName: string;
+    lastName: string;
+    weightPounds: number;
+    weightKilograms: number;
+    heightInches: number;
+    heightFeet: number;
+    heightMeters: number;
 
-// function showBmi(person: User) {
-//     return "Your BMI is \n (imperial): " + person.getBmiImperial() + " \n (metric): " + person.getBmiMetric();
-// }
+    constructor(
+        gender: string,
+        firstName: string,
+        lastName: string,
+        weightPounds: number,
+        weightKilograms: number,
+        heightInches: number,
+        heightFeet: number,
+        heightMeters: number
+    ){
+        this.gender = gender;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.weightPounds = weightPounds;
+        this.weightKilograms = weightKilograms;
+        this.heightInches = heightInches;
+        this.heightFeet = heightFeet;
+        this.heightMeters = heightMeters;
+    }
 
-function test(person: User) {
-    return person.doTest();
+    public getBmiImperial() {
+        let a = (this.weightPounds * 0.45);
+        let feetToInches = (this.heightFeet * 12);
+        let inches = (this.heightInches + feetToInches);
+        let b = (inches * 0.025);
+        let c = (b * b);
+        return (a / c);
+    }
+
+    public getBmiMetric() {
+        let a = this.heightMeters;
+        let b = (this.weightKilograms * this.weightKilograms);
+        return (a / b);
+    }
+
+    public doTest() {
+        console.log('got test');
+    }
 }
+
+function showBmiImperial(person: User) {
+    return "" + person.getBmiImperial();
+}
+
+function showBmiMetric(person: User) {
+    return "" + person.getBmiMetric();
+}
+
+// function test(person: User) {
+//     person.doTest();
+// }
 
 
 
@@ -21,5 +73,5 @@ let person = new User(
     1.778
 );
 
-// document.body.innerHTML = showBmi(person);
-document.body.innerHTML = test(person);
+document.getElementById("weightMetric").innerHTML = 'something';
+// test(person);

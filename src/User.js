@@ -1,32 +1,51 @@
-"use strict";
-exports.__esModule = true;
-var User = /** @class */ (function () {
-    function User(gender, firstName, lastName, weightPounds, weightKilograms, heightInches, heightFeet, heightMeters) {
-        this.gender = gender;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.weightPounds = weightPounds;
-        this.weightKilograms = weightKilograms;
-        this.heightInches = heightInches;
-        this.heightFeet = heightFeet;
-        this.heightMeters = heightMeters;
-    }
-    User.prototype.getBmiImperial = function () {
-        var a = (this.weightPounds * 0.45);
-        var feetToInches = (this.heightFeet * 12);
-        var inches = (this.heightInches + feetToInches);
-        var b = (inches * 0.025);
-        var c = (b * b);
-        return (a / c);
-    };
-    User.prototype.getBmiMetric = function () {
-        var a = this.heightMeters;
-        var b = (this.weightKilograms * this.weightKilograms);
-        return (a / b);
-    };
-    User.prototype.doTest = function () {
-        return 'got test';
-    };
-    return User;
-}());
-exports.User = User;
+// export class User {
+//     gender: string;
+//     firstName: string;
+//     lastName: string;
+//     weightPounds: number;
+//     weightKilograms: number;
+//     heightInches: number;
+//     heightFeet: number;
+//     heightMeters: number;
+//
+//     constructor(
+//         gender: string,
+//         firstName: string,
+//         lastName: string,
+//         weightPounds: number,
+//         weightKilograms: number,
+//         heightInches: number,
+//         heightFeet: number,
+//         heightMeters: number
+//     ){
+//         this.gender = gender;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.weightPounds = weightPounds;
+//         this.weightKilograms = weightKilograms;
+//         this.heightInches = heightInches;
+//         this.heightFeet = heightFeet;
+//         this.heightMeters = heightMeters;
+//     }
+//
+//     public getBmiImperial() {
+//         let a = (this.weightPounds * 0.45);
+//         let feetToInches = (this.heightFeet * 12);
+//         let inches = (this.heightInches + feetToInches);
+//         let b = (inches * 0.025);
+//         let c = (b * b);
+//         return (a / c);
+//     }
+//
+//     public getBmiMetric() {
+//         let a = this.heightMeters;
+//         let b = (this.weightKilograms * this.weightKilograms);
+//         return (a / b);
+//     }
+//
+//     public doTest() {
+//         console.log('got test');
+//     }
+// }
+//
+// export default User;
